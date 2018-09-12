@@ -27,8 +27,9 @@ plumber.newPipe(resourceResolver)
   
  check that list pipe is working my running following queries:
 
-`GET /services/adapt/list.csv?size=99`
-`GET /services/adapt/list.json`
+```GET /services/adapt/list.csv?size=99```
+
+```GET /services/adapt/list.json```
 
 now, back in gogo, add a subnode to describe the song component how to search for lines
 
