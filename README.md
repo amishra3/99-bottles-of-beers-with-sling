@@ -10,7 +10,8 @@ proposal for a candidate of http://99-bottles-of-beer.net leveraging:
 `mvn clean install content-package`
 
 in gogo shell, run the following command that parses the website and creates /var/bottles tree
-```run egrep 'http://99-bottles-of-beer.net/lyrics.html' @ name bottles @ with 'pattern=(?<number>\d(\d)?) bottle(s)? of beer on the wall,' / mkdir '/var/bottles/${bottles.number}' / write 'onTheWall=${bottles.number}' 'offTheWall=${Number(bottles.number)-1}' 'sling:resourceType=bottles/line'``
+
+```run egrep 'http://99-bottles-of-beer.net/lyrics.html' @ name bottles @ with 'pattern=(?<number>\d(\d)?) bottle(s)? of beer on the wall,' / mkdir '/var/bottles/${bottles.number}' / write 'onTheWall=${bottles.number}' 'offTheWall=${Number(bottles.number)-1}' 'sling:resourceType=bottles/line'```
 
 in your favourite groovy console, run the following groovy script, build a list pipe like this one:
 ```
@@ -31,12 +32,12 @@ plumber.newPipe(resourceResolver)
 
 now, back in gogo, add a subnode to describe the song component how to search for lines
 
-`run mkdir /var/bottles/pipes/lines / write "sling:resourceType=slingPipes/reference" "expr=/services/adapt/list"`
+```run mkdir /var/bottles/pipes/lines / write "sling:resourceType=slingPipes/reference" "expr=/services/adapt/list"```
 
 
 still in gogo run that command that will set resource type of the song, allow access to user imccoy, and package up bottles for safety
 
-`run echo /var/bottles / write 'sling:resourceType=bottles/song' / allow imccoy / pkg /etc/packages/bottles-backup.zip`
+```run echo /var/bottles / write 'sling:resourceType=bottles/song' / allow imccoy / pkg /etc/packages/bottles-backup.zip```
 
 
 Now enjoy the lyrics of the song by accessing
