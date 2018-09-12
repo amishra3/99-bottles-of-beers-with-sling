@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Lyrics of 99 bottles of beer</title>
+    </head>
+    <body>
+        <h1>Lyrics of 99 bottles of beer</h1>
+        <section data-sly-use.model="org.apache.sling.pipes.models.PipeModel">
+            <p data-sly-repeat.line="${model.outputs.lines}" data-sly-resource="${line.path}"></p>
+        </section>
+        <p>
+            No more bottles of beer on the wall, no more bottles of beer.
+            Go to the store and buy some more, 99 bottles of beer on the wall.
+        </p>
+    </body>
+</html>
